@@ -13,6 +13,7 @@ public class _01_RobotRace {
 		int x = 100;
 		int y = 500;
 		Random rand = new Random();
+		boolean race = true;
 		
 		for(int i = 0;i<robots.length;i++) {
 			robots[i] = new Robot();
@@ -21,12 +22,20 @@ public class _01_RobotRace {
 			x += 150;
 		}
 		
-		for(int i = 0;i<robots.length;i++) {
-			int r = rand.nextInt(50);
-			robots[i].setSpeed(50);
-			robots[i].move(r);
-			
+		while(race == true) {	
+			for(int i = 0;i<robots.length;i++) {
+				int r = rand.nextInt(50);
+				robots[i].setSpeed(5);
+				robots[i].move(r);	
+				if(robots[i].getY()<=50) {
+					race = false;
+					robots[i].setSpeed(10);
+					robots[i].turn(360);
+				}
+			}
 		}
+		
+		
 	}
 		//2. create an array of 5 robots.
 
