@@ -24,7 +24,6 @@ public class _00_ArrayCheatSheet {
 		}
 		//7. make an array of 50 integers
 		int[] numbers = new int[50];
-		
 		Random rand = new Random();
 		//8. use a for loop to make every value of the integer array a random number
 		for(int i = 0;i<numbers.length;i++) {
